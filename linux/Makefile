@@ -3,7 +3,7 @@ obj = $(src:.c=.o)
 
 LDFLAGS += -lSDL2_mixer `sdl2-config --libs` -lm
 
-CFLAGS += `sdl2-config --cflags` -DHAVE_SDL2
+CFLAGS += `sdl2-config --cflags` -DHAVE_SDL2 -flto -O3 -fno-rtti -fno-exceptions
 
 opensupaplex: $(obj)
 	$(CC) -o $@ $^ $(LDFLAGS)

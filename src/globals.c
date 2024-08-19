@@ -77,7 +77,7 @@ char gSavegameSavFilename[13] = "SAVEGAME.SAV";
 
 uint16_t gIsDebugModeEnabled = 0; // word_51970
 uint8_t gIsForcedLevel = 0; // byte_59B84
-uint8_t gIsForcedCheatMode = 0; // byte_59B85
+uint8_t gIsForcedCheatMode = 1; // byte_59B85
 
 uint8_t gGameSpeed = kDefaultGameSpeed; // gameSpeed
 uint8_t gIsGameSpeedChangeButtonPressed = 0;

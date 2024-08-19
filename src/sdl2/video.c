@@ -33,6 +33,9 @@ static const int kWindowHeight = 544;
 #elif defined(__PSL1GHT__) || defined(__WIIU__)
 static const int kWindowWidth = 1280;
 static const int kWindowHeight = 720;
+#elif defined(__EMSCRIPTEN__)
+static const int kWindowWidth = kScreenWidth * 2;
+static const int kWindowHeight = kScreenHeight * 2;
 #else
 static const int kWindowWidth = kScreenWidth * 4;
 static const int kWindowHeight = kScreenHeight * 4;
@@ -67,7 +70,7 @@ void initializeVideo(uint8_t fastMode)
 #if defined(__SWITCH__) || defined(__vita__) || defined(__PSP__) || defined(__PSL1GHT__) || defined(__WIIU__) || defined(__PS2__)
                                SDL_WINDOW_FULLSCREEN);
 #else
-                               0);
+                               SDL_WINDOW_ALLOW_HIGHDPI);
 #endif
 
     if (gWindow == NULL)
